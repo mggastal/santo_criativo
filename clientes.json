@@ -1,0 +1,117 @@
+{
+ "_como_usar": "grupo: ativo | politica | inativo. logo: arquivo em logos/ (vazio = iniciais na cor). sheet: planilha Stract do dash. Para adicionar cliente, copie um bloco.",
+ "clientes": [
+  {
+   "repo": "santo_mci",
+   "nome": "MCI Imobiliária",
+   "grupo": "ativo",
+   "sheet": "1q5G2IfNqnROatZ1W4sy9KqgbqmpPsOUmYbhhGf6wS7E",
+   "logo": "logos/santo_mci.png",
+   "cor": "#EEAD2D"
+  },
+  {
+   "repo": "santo_polvo",
+   "nome": "Polvo",
+   "grupo": "ativo",
+   "sheet": "1f6Dxgrjx8ratQm5Niu2BZgOVFlsQtnS1U5IvFm38iJw",
+   "logo": "logos/santo_polvo.png",
+   "cor": "#7c3aed"
+  },
+  {
+   "repo": "santo_lunar",
+   "nome": "Lunar Distribuidora",
+   "grupo": "ativo",
+   "sheet": "1Xhw_sVlwo2RjddDKHSHfOa-AHDSTP_s-IIDZM9NRoqE",
+   "logo": "logos/santo_lunar.png",
+   "cor": "#EA8425"
+  },
+  {
+   "repo": "santo_lume",
+   "nome": "Ótica Lume",
+   "grupo": "ativo",
+   "sheet": "1HYI3aObDVTT3vbOgfG71JRTc417CtJ381zobDURt3q8",
+   "logo": "logos/santo_lume.png",
+   "cor": "#014BA0"
+  },
+  {
+   "repo": "santo_gc2",
+   "nome": "GC2 Materiais Elétricos",
+   "grupo": "ativo",
+   "sheet": "1faWlRpa7osVOCKmuvQrD_gg8aSx4aloklqcmjKjgiac",
+   "logo": "",
+   "cor": "#4A6984"
+  },
+  {
+   "repo": "santo_danielmussi",
+   "nome": "Daniel Mussi",
+   "grupo": "politica",
+   "sheet": "1enwKvr8k_kIUQslpGeBGPODksGka_E2_UKL2jWUBvS4",
+   "logo": "",
+   "cor": "#2563eb"
+  },
+  {
+   "repo": "santo_danilorodrigues",
+   "nome": "Danilo Rodrigues",
+   "grupo": "politica",
+   "sheet": "17-wmL33TPdCfV714Q6_3CzGATt5k0tLcw3-JP1aiigs",
+   "logo": "",
+   "cor": "#0891b2"
+  },
+  {
+   "repo": "santo_josi",
+   "nome": "Josi Cunha",
+   "grupo": "politica",
+   "sheet": "1YAi7NEsN_xuL4MBhwhK6gJkDLdodt9JYOxnRmzR15f0",
+   "logo": "",
+   "cor": "#db2777"
+  },
+  {
+   "repo": "santo_josicunha",
+   "nome": "Josi Cunha (2)",
+   "grupo": "politica",
+   "sheet": "1Z20Cl0IRUhI2E716Iyj2S1UGlNlxRBdpAJ2ugl-kF-g",
+   "logo": "",
+   "cor": "#be185d"
+  },
+  {
+   "repo": "santo_miriam",
+   "nome": "Miriam Marroni",
+   "grupo": "politica",
+   "sheet": "14GkoIJsz5smjyaoSKNIlnp7fxWKcjZ_EWSZ5buVa_Y4",
+   "logo": "logos/santo_miriam.png",
+   "cor": "#dc2626"
+  },
+  {
+   "repo": "santo_pedropereira",
+   "nome": "Pedro Pereira",
+   "grupo": "politica",
+   "sheet": "1J56B-E0ZQArppohGl8D0OYjxpTliNqSkPx4vBhc3V68",
+   "logo": "",
+   "cor": "#16a34a"
+  },
+  {
+   "repo": "santo_girao",
+   "nome": "Academia Girão",
+   "grupo": "inativo",
+   "sheet": "1C9u-dG2EWQkPA3yHatw7uBoMuSYrlgOsbUq8wLHa7ck",
+   "logo": "",
+   "cor": "#ea580c"
+  },
+  {
+   "repo": "santo_bemmequer",
+   "nome": "Laboratório Bem Me Quer",
+   "grupo": "inativo",
+   "sheet": "1rNDwriAHBml5Qv7tK99nRzZrKB3N1VF9r8zZGt7eRag",
+   "logo": "",
+   "cor": "#0d9488"
+  },
+  {
+   "repo": "santo_hliberty",
+   "nome": "hLiberty",
+   "grupo": "inativo",
+   "sheet": "1ty88pWmkwi-Qs3S3MvhIR0_cmxNTI7Rlo76mpFyL2Zs",
+   "logo": "",
+   "cor": "#4f46e5"
+  }
+ ]
+}

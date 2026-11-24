@@ -1,422 +1,353 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Santo Criativo — Visão Geral</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Central Santo Criativo</title>
+<link rel="icon" type="image/png" href="logos/santo_icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ── DARK (padrão) ── */
 :root{
-  --bg:#0a0d14;
-  --surface:#111520;
-  --surface2:#181d2a;
-  --surface3:#1e2535;
-  --border:rgba(255,255,255,0.07);
-  --text:#f0f4ff;
-  --muted:#8b95a9;
-  --muted2:#4a5568;
-  --accent:#e11d48;
-  --sh:0 2px 12px rgba(0,0,0,.4);
-  --r:14px;
+  --bg:#f4f5f7; --surface:#ffffff; --surface2:#f8f9fb; --border:#e4e7ec;
+  --text:#111827; --text2:#4b5563; --muted:#8a93a3;
+  --navy:#4A6984; --orange:#F26B36;
+  --good:#16a34a; --good-bg:#dcfce7; --warn:#b45309; --warn-bg:#fef3c7; --idle:#6b7280; --idle-bg:#eef0f3;
+  --tile:#151922; --shadow:0 1px 2px rgba(16,24,40,.05),0 1px 3px rgba(16,24,40,.06);
 }
-/* ── LIGHT ── */
-[data-theme="light"]{
-  --bg:#f0f2f7;
-  --surface:#ffffff;
-  --surface2:#f7f8fc;
-  --surface3:#eef0f5;
-  --border:rgba(0,0,0,0.07);
-  --text:#0f1523;
-  --muted:#6b7280;
-  --muted2:#9ca3af;
-  --sh:0 1px 6px rgba(0,0,0,.08);
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1117; --surface:#161a22; --surface2:#1c212b; --border:#2a303c;
+    --text:#f1f3f6; --text2:#b7bfcc; --muted:#7d8697;
+    --good:#4ade80; --good-bg:rgba(74,222,128,.12); --warn:#fbbf24; --warn-bg:rgba(251,191,36,.12); --idle:#9ca3af; --idle-bg:rgba(156,163,175,.12);
+    --tile:#0b0e13; --shadow:none;
+  }
 }
-[data-theme="light"] .header{background:#fff;}
-[data-theme="light"] .sum-card::after{opacity:.8;}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.5;min-height:100vh;transition:background .2s,color .2s;}
-
-/* ── HEADER ── */
-.header{padding:18px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--surface);}
-.brand{display:flex;align-items:center;gap:11px;}
-.brand-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#e11d48,#f43f5e);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#fff;flex-shrink:0;}
-.brand-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;}
-.brand-sub{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;}
-
-.header-right{display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
-.sync-pill{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:5px;padding:4px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;}
-.sync-dot{width:5px;height:5px;border-radius:50%;background:#10b981;flex-shrink:0;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
-.period-bar{display:flex;gap:3px;background:var(--surface2);padding:3px;border-radius:9px;border:1px solid var(--border);}
-.pb{padding:5px 11px;border-radius:7px;border:none;background:transparent;cursor:pointer;font-size:11px;font-weight:600;color:var(--muted);transition:all .15s;font-family:'DM Sans',sans-serif;}
-.pb.active{background:var(--accent);color:#fff;}
-
-.theme-btn{display:flex;align-items:center;gap:5px;padding:5px 11px;border-radius:7px;border:1px solid var(--border);background:var(--surface2);cursor:pointer;font-size:11px;font-weight:600;color:var(--muted);transition:all .15s;font-family:'DM Sans',sans-serif;}
-.theme-btn:hover{color:var(--text);}
-
-/* ── MAIN ── */
-.main{padding:20px 28px;}
-
-/* ── SUMMARY ── */
-.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:22px;}
-.sum-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;position:relative;overflow:hidden;}
-.sum-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);}
-.sum-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1.2px;font-weight:600;margin-bottom:5px;}
-.sum-val{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;}
-.sum-sub{font-size:10px;color:var(--muted);margin-top:2px;}
-
-/* ── SECTION ── */
-.section-hd{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;}
-
-/* ── TABLE HEADER ── */
-.clients-header{
-  display:grid;
-  grid-template-columns:200px 1fr 1fr 120px 120px 76px;
-  gap:12px;padding:0 20px 10px;
-  font-size:9px;color:var(--muted2);text-transform:uppercase;letter-spacing:1px;font-weight:700;
+:root[data-theme="dark"]{
+  --bg:#0e1117; --surface:#161a22; --surface2:#1c212b; --border:#2a303c;
+  --text:#f1f3f6; --text2:#b7bfcc; --muted:#7d8697;
+  --good:#4ade80; --good-bg:rgba(74,222,128,.12); --warn:#fbbf24; --warn-bg:rgba(251,191,36,.12); --idle:#9ca3af; --idle-bg:rgba(156,163,175,.12);
+  --tile:#0b0e13; --shadow:none;
 }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.mono{font-family:'DM Mono',monospace;font-variant-numeric:tabular-nums}
 
-/* ── CLIENT CARD ── */
-.clients-grid{display:flex;flex-direction:column;gap:9px;}
-.client-card{
-  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
-  padding:18px 20px;
-  display:grid;grid-template-columns:200px 1fr 1fr 120px 120px 76px;
-  align-items:center;gap:12px;
-  transition:border-color .15s,box-shadow .15s;
-}
-.client-card:hover{border-color:rgba(255,255,255,.13);box-shadow:var(--sh);}
-[data-theme="light"] .client-card:hover{border-color:rgba(0,0,0,.1);}
-.client-card.error{border-color:rgba(239,68,68,.2);}
+/* header */
+header{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-logo{height:36px;width:auto;display:block;padding:4px 8px;border-radius:8px;background:#fff}
+.brand-txt{border-left:1px solid var(--border);padding-left:14px}
+.brand-title{font-weight:700;font-size:15px}
+.brand-sub{font-size:12px;color:var(--muted)}
+.hd-r{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sync{font-size:12px;color:var(--text2);display:flex;align-items:center;gap:6px}
+.sync i{width:7px;height:7px;border-radius:50%;background:var(--good);display:inline-block}
+.seg{display:inline-flex;background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--text2);font:600 12px 'DM Sans',sans-serif;padding:6px 11px;border-radius:6px;cursor:pointer}
+.seg button.on{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+[data-theme="dark"] .seg button.on{background:#2a303c}
+.icon-btn{border:1px solid var(--border);background:var(--surface2);color:var(--text2);border-radius:9px;height:32px;padding:0 10px;cursor:pointer;font:600 12px 'DM Sans',sans-serif}
 
-.client-info{display:flex;align-items:center;gap:10px;}
-.client-logo{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;}
-.client-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;}
-.client-updated{font-size:10px;color:var(--muted);margin-top:2px;}
+/* sections */
+main{padding:24px 0 40px}
+.sec{margin-top:28px}
+.sec:first-child{margin-top:0}
+.sec-hd{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.sec-hd h2{font-size:16px;font-weight:700}
+.sec-hd span{font-size:12px;color:var(--muted)}
 
-/* ── KPI BLOCKS ── */
-.kpi-block,.cpl-block{display:flex;flex-direction:column;gap:4px;align-items:center;}
-.kpi-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;font-weight:600;}
-.kpi-row,.cpl-row{display:flex;align-items:center;gap:5px;justify-content:center;}
-.plat{font-size:8px;padding:1px 4px;border-radius:3px;font-weight:700;flex-shrink:0;line-height:1.5;}
-.mp{background:rgba(24,119,242,.15);color:#60a5fa;}
-.gp{background:rgba(251,188,4,.15);color:#fbbf24;}
-.kpi-num{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;}
-.cpl-val{font-family:'DM Mono',monospace;font-size:15px;font-weight:700;}
-.na{font-size:10px;color:var(--muted2);}
+/* summary */
+.sum{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sum-c{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+.sum-l{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.sum-v{font-size:24px;font-weight:700;margin-top:4px;white-space:nowrap}
+.sum-s{font-size:12px;color:var(--text2);margin-top:2px}
 
-/* ── CPL COLORS ── */
-.cg{color:#10b981;} .cw2{color:#f59e0b;} .cr{color:#ef4444;} .cn{color:var(--muted);}
+/* active cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.card-top{display:flex;gap:14px;padding:16px 16px 12px;align-items:center}
+.tile{width:92px;height:56px;border-radius:10px;background:var(--tile);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
+.tile img{max-width:78px;max-height:40px;object-fit:contain}
+.tile.ini{font-weight:700;font-size:18px;color:#fff}
+.c-name{font-weight:700;font-size:15px;line-height:1.25}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:11px;font-weight:600;border-radius:99px;padding:2px 8px;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.chip i{width:6px;height:6px;border-radius:50%;background:currentColor;display:inline-block}
+.chip.good{color:var(--good);background:var(--good-bg)}
+.chip.warn{color:var(--warn);background:var(--warn-bg)}
+.chip.idle{color:var(--idle);background:var(--idle-bg)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.kpi{padding:10px 16px}
+.kpi+.kpi{border-left:1px solid var(--border)}
+.kpi-l{font-size:11px;color:var(--muted);font-weight:600}
+.kpi-v{font-size:17px;font-weight:700;margin-top:2px;white-space:nowrap}
+.g-row{padding:8px 16px;font-size:12px;color:var(--text2);border-bottom:1px solid var(--border);display:flex;gap:6px;align-items:center}
+.g-row img{width:14px;height:14px}
+.spark{padding:10px 16px 4px;position:relative}
+.spark-l{font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
+.spark svg{display:block;width:100%;height:54px;margin-top:6px}
+.spark rect.hit{fill:transparent;cursor:crosshair}
+.card-ft{display:flex;justify-content:space-between;align-items:center;padding:10px 16px 14px;margin-top:auto;font-size:12px;color:var(--muted);gap:8px}
+.open{color:var(--text);font-weight:700;text-decoration:none;border:1px solid var(--border);border-radius:8px;padding:6px 12px;background:var(--surface2);white-space:nowrap}
+.open:hover{border-color:var(--navy)}
+.tip{position:fixed;pointer-events:none;background:var(--text);color:var(--bg);font-size:12px;border-radius:8px;padding:7px 10px;z-index:50;display:none;line-height:1.4;box-shadow:0 4px 14px rgba(0,0,0,.18)}
 
-/* ── LINK ── */
-.link-btn{display:flex;align-items:center;justify-content:center;gap:4px;padding:6px 11px;border-radius:7px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:600;text-decoration:none;transition:all .15s;white-space:nowrap;}
-.link-btn:hover{border-color:var(--accent);color:var(--accent);}
+/* tables */
+.tbl-wrap{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap;background:var(--surface2)}
+th.num,td.num{text-align:right}
+th .arr{opacity:.35;margin-left:3px}
+th.sorted .arr{opacity:1;color:var(--text)}
+td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:middle}
+td.num{white-space:nowrap}
+.note{display:block;font-size:11px;color:var(--muted);font-family:'DM Sans',sans-serif}
+tbody tr:hover{background:var(--surface2)}
+tfoot td{font-weight:700;background:var(--surface2);border-bottom:0}
+.who{display:flex;align-items:center;gap:10px}
+.who .tile{width:56px;height:34px;border-radius:7px}
+.who .tile img{max-width:48px;max-height:24px}
+.who .tile.ini{font-size:13px}
+.lnk{color:var(--navy);font-weight:700;text-decoration:none}
+[data-theme="dark"] .lnk{color:#9fc0dc}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .lnk{color:#9fc0dc}}
+.empty{color:var(--muted)}
 
-/* ── SKELETON ── */
-.skel{height:11px;border-radius:4px;background:linear-gradient(90deg,var(--surface2) 25%,var(--surface3) 50%,var(--surface2) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;display:inline-block;}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.err-msg{font-size:9px;color:#ef4444;font-style:italic;}
+footer{border-top:1px solid var(--border);padding:18px 0 28px;color:var(--muted);font-size:12px}
+.ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-/* ── FOOTER ── */
-.footer{padding:14px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
-.footer-txt{font-size:10px;color:var(--muted2);}
-
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
-  .summary{grid-template-columns:repeat(2,1fr);}
-  .clients-header{display:none;}
-  .client-card{grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto;}
-  .client-info{grid-column:1/-1;}
-  .client-card>:last-child{justify-self:end;}
-}
-@media(max-width:560px){
-  .main{padding:12px 14px;}
-  .header{padding:12px 14px;}
-  .summary{grid-template-columns:1fr 1fr;}
-  .client-card{grid-template-columns:1fr 1fr;}
-  .client-info{grid-column:1/-1;}
+@media (max-width:900px){.sum{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+  .hide-sm{display:none}
+  .wrap{padding:0 16px}
+  .cards{grid-template-columns:1fr}
+  .brand-txt{display:none}
+  .sum-v{font-size:17px}
+  .kpi{padding:10px 10px}
+  .kpi-v{font-size:14px}
+  .sum-c{padding:12px}
 }
 </style>
 </head>
 <body>
-
-<div class="header">
-  <div class="brand">
-    <div class="brand-icon">S</div>
-    <div>
-      <div class="brand-name">Santo Criativo</div>
-      <div class="brand-sub">Painel da Agência</div>
+<header>
+  <div class="wrap hd">
+    <div class="brand">
+      <img class="brand-logo" src="logos/santo.png" alt="Santo Criativo">
+      <div class="brand-txt"><div class="brand-title">Central de Dashboards</div><div class="brand-sub">Meta Ads e Google Ads dos clientes</div></div>
+    </div>
+    <div class="hd-r">
+      <div class="sync"><i></i><span id="sync">Carregando…</span></div>
+      <div class="seg" id="per">
+        <button data-p="1">Ontem</button><button data-p="7">7 dias</button><button data-p="14">14 dias</button><button data-p="30" class="on">30 dias</button>
+      </div>
+      <button class="icon-btn" id="themeBtn" title="Alternar tema">Tema</button>
     </div>
   </div>
-  <div class="header-right">
-    <div class="sync-pill">
-      <div class="sync-dot"></div>
-      <span id="lastSync">Carregando...</span>
-    </div>
-    <div class="period-bar">
-      <button class="pb" onclick="setPeriod(1,this)">Ontem</button>
-      <button class="pb" onclick="setPeriod(7,this)">7d</button>
-      <button class="pb" onclick="setPeriod(14,this)">14d</button>
-      <button class="pb active" onclick="setPeriod(30,this)">30d</button>
-    </div>
-    <button class="theme-btn" onclick="toggleTheme()">
-      <span id="themeIcon">☀️</span><span id="themeLabel">Claro</span>
-    </button>
-  </div>
-</div>
+</header>
 
-<div class="main">
-  <div class="summary">
-    <div class="sum-card"><div class="sum-lbl">Invest. Total</div><div class="sum-val" id="sumSpend">—</div><div class="sum-sub">todos os clientes</div></div>
-    <div class="sum-card"><div class="sum-lbl">Total Leads</div><div class="sum-val" id="sumLeads">—</div><div class="sum-sub">todos os clientes</div></div>
-    <div class="sum-card"><div class="sum-lbl">CPL Médio</div><div class="sum-val" id="sumCPL">—</div><div class="sum-sub">ponderado por leads</div></div>
-    <div class="sum-card"><div class="sum-lbl">Clientes Ativos</div><div class="sum-val" id="sumAtivos">—</div><div class="sum-sub">com dados no período</div></div>
-  </div>
+<main class="wrap">
+  <section class="sec">
+    <div class="sec-hd"><h2>Clientes ativos</h2><span id="perLbl"></span></div>
+    <div class="sum" id="sum"></div>
+    <div class="cards" id="cards" style="margin-top:14px"></div>
+  </section>
 
-  <div class="section-hd">Clientes</div>
-  <div class="clients-header">
-    <div>Cliente</div>
-    <div style="text-align:center">Investimento</div>
-    <div style="text-align:center">Leads</div>
-    <div style="text-align:center">CPL Meta</div>
-    <div style="text-align:center">CPL Google</div>
-    <div></div>
-  </div>
-  <div class="clients-grid" id="clientsGrid"></div>
-</div>
+  <section class="sec">
+    <div class="sec-hd"><h2>Campanhas políticas</h2><span>eleições 2026 · encerradas</span></div>
+    <div class="tbl-wrap"><table id="tPol"></table></div>
+  </section>
 
-<div class="footer">
-  <div class="footer-txt">Santo Criativo © 2026 — Dados atualizados diariamente às 06:00 BRT</div>
-  <div class="footer-txt" id="footerPeriod"></div>
-</div>
+  <section class="sec">
+    <div class="sec-hd"><h2>Clientes inativos</h2><span>sem veiculação recente</span></div>
+    <div class="tbl-wrap"><table id="tIna"></table></div>
+  </section>
+</main>
+
+<footer><div class="wrap ft">
+  <span>Santo Criativo · uso interno</span>
+  <span id="ftInfo"></span>
+</div></footer>
+<div class="tip" id="tip"></div>
 
 <script>
-// ═══════════════════════════════════════════════════════════
-// CONFIGURAÇÃO — para adicionar um cliente, copie um bloco
-// ═══════════════════════════════════════════════════════════
-const CLIENTES = [
-  {
-    nome: "Polvo",
-    url:  "https://mggastal.github.io/santo_polvo/data.json",
-    dash: "https://mggastal.github.io/santo_polvo/",
-  },
-  {
-    nome: "Bem Me Quer",
-    url:  "https://mggastal.github.io/santo_bemmequer/data.json",
-    dash: "https://mggastal.github.io/santo_bemmequer/",
-  },
-  {
-    nome: "MCI",
-    url:  "https://mggastal.github.io/santo_mci/data.json",
-    dash: "https://mggastal.github.io/santo_mci/",
-  },
-  {
-    nome: "Girão",
-    url:  "https://mggastal.github.io/santo_girao/data.json",
-    dash: "https://mggastal.github.io/santo_girao/",
-  },
-];
-
-// ═══ ESTADO ══════════════════════════════
-let period = 30;
-const clientData = {};
-
-// ═══ UTILS ═══════════════════════════════
-const fR  = v => (v==null||isNaN(v)||v===0) ? '—' : 'R$'+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const fRk = v => !v ? '—' : v>=1000 ? 'R$'+(v/1000).toFixed(1)+'k' : fR(v);
-const fN  = v => Number(v).toLocaleString('pt-BR');
-const pkey = n => n===1?'d1':n===7?'d7':n===14?'d14':'d30';
-
-function cplCls(v,bom,medio){
-  if(v==null||v===0) return 'cn';
-  if(v<=bom)   return 'cg';
-  if(v<=medio) return 'cw2';
-  return 'cr';
+let DATA=null, PER=30;
+const $=s=>document.querySelector(s);
+const fR=v=>v==null?'—':'R$ '+Number(v).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fRk=v=>v==null?'—':(v>=10000?'R$ '+(v/1000).toLocaleString('pt-BR',{maximumFractionDigits:1})+' mil':fR(v));
+const fN=v=>v==null?'—':Number(v).toLocaleString('pt-BR');
+const fD=s=>{if(!s)return '—';const[y,m,d]=s.split('-');return d+'/'+m;};
+const fDY=s=>{if(!s)return '—';const[y,m,d]=s.split('-');return d+'/'+m+'/'+y.slice(2);};
+const dayDiff=(a,b)=>Math.round((new Date(a+'T12:00')-new Date(b+'T12:00'))/864e5);
+function ago(iso){
+  if(!iso) return '—';
+  const m=Math.round((Date.now()-new Date(iso))/6e4);
+  if(m<1) return 'agora';
+  if(m<60) return 'há '+m+' min';
+  const h=Math.round(m/60); if(h<48) return 'há '+h+' h';
+  return 'há '+Math.round(h/24)+' dias';
 }
-function hashColor(s){
-  const cols=['#e11d48','#7c3aed','#0ea5e9','#10b981','#f59e0b','#8b5cf6','#ec4899','#14b8a6'];
-  let h=0; for(let i=0;i<s.length;i++) h=s.charCodeAt(i)+((h<<5)-h);
-  return cols[Math.abs(h)%cols.length];
+function initials(n){return n.replace(/\(.*?\)/g,'').split(/\s+/).filter(Boolean).map(w=>w[0]).join('').slice(0,2).toUpperCase();}
+function tile(c){
+  return c.logo
+    ? `<div class="tile"><img src="${c.logo}" alt="${c.nome}" loading="lazy"></div>`
+    : `<div class="tile ini" style="background:${c.cor||'#4A6984'}">${initials(c.nome)}</div>`;
 }
-function initials(s){ return s.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2); }
+const perName=p=>p===1?'ontem':'últimos '+p+' dias';
 
-// ═══ FETCH ═══════════════════════════════
-async function fetchCliente(c){
-  try{
-    const r = await fetch(c.url+'?t='+Date.now());
-    if(!r.ok) throw new Error('HTTP '+r.status);
-    return {ok:true, data: await r.json()};
-  }catch(e){ return {ok:false, error:e.message}; }
+/* status de veiculação, comparando com "ontem" (ref) */
+function status(m){
+  if(!m) return [{cls:'idle',t:'Sem dados na planilha'}];
+  // a planilha só tem linhas em dias com veiculação: não dá para separar
+  // "planilha parada" de "cliente sem gasto", então o card diz só o fato
+  const parado=m.ultimo_gasto?dayDiff(m.ref,m.ultimo_gasto):999;
+  if(parado<=1) return [{cls:'good',t:'Veiculando'}];
+  return [{cls:parado<=7?'warn':'idle',t:'Último gasto na planilha: '+fD(m.ultimo_gasto)}];
 }
 
-// ═══ RENDER ══════════════════════════════
-function renderGrid(){
-  const grid = document.getElementById('clientsGrid');
-  grid.innerHTML = '';
-  let totSpend=0, totLeads=0, ativos=0;
-
-  CLIENTES.forEach((c,i)=>{
-    const res = clientData[i];
-    const cor   = res?.data?.cor   || hashColor(c.nome);
-    const letra = res?.data?.letra || initials(c.nome);
-    const pk = pkey(period);
-    const card = document.createElement('div');
-    card.className = 'client-card';
-
-    // Skeleton enquanto carrega
-    if(!res){
-      card.innerHTML = `
-        <div class="client-info">
-          <div class="client-logo" style="background:${cor}">${letra}</div>
-          <div><div class="client-name">${c.nome}</div><div class="client-updated">Carregando...</div></div>
-        </div>
-        <div class="kpi-block"><div class="skel" style="width:68px"></div></div>
-        <div class="kpi-block"><div class="skel" style="width:48px"></div></div>
-        <div class="cpl-block"><div class="skel" style="width:58px"></div></div>
-        <div class="cpl-block"><div class="skel" style="width:58px"></div></div>
-        <div></div>`;
-      grid.appendChild(card);
-      return;
-    }
-
-    // Erro
-    if(!res.ok){
-      card.className += ' error';
-      card.innerHTML = `
-        <div class="client-info">
-          <div class="client-logo" style="background:${cor}">${letra}</div>
-          <div><div class="client-name">${c.nome}</div><div class="err-msg">Erro ao carregar dados</div></div>
-        </div>
-        <div class="na">—</div><div class="na">—</div>
-        <div class="na">—</div><div class="na">—</div>
-        <div><a class="link-btn" href="${c.dash}" target="_blank">Ver →</a></div>`;
-      grid.appendChild(card);
-      return;
-    }
-
-    const d = res.data;
-    const meta   = d.meta?.[pk]   || {};
-    const google = d.google?.[pk] || {};
-    const gAtivo = d.google?.ativo;
-
-    const mSpend = meta.spend   || 0;
-    const mLeads = meta.leads   || 0;
-    const mCPL   = meta.cpl;
-    const gSpend = gAtivo ? (google.spend || 0) : 0;
-    const gLeads = gAtivo ? (google.leads || 0) : 0;
-    const gCPL   = google.cpl;
-
-    const mBom=d.meta?.cplBom,   mMedio=d.meta?.cplMedio;
-    const gBom=d.google?.cplBom, gMedio=d.google?.cplMedio;
-
-    const totC = mSpend + gSpend;
-    const totL = mLeads + gLeads;
-    if(totC>0||totL>0) ativos++;
-    totSpend += totC;
-    totLeads += totL;
-
-    card.innerHTML = `
-      <div class="client-info">
-        <div class="client-logo" style="background:${cor}">${letra}</div>
-        <div>
-          <div class="client-name">${d.cliente||c.nome}</div>
-          <div class="client-updated">Atualizado ${d.atualizado||'—'}</div>
-        </div>
-      </div>
-
-      <div class="kpi-block">
-        <div class="kpi-lbl">Invest.</div>
-        <div class="kpi-row"><span class="plat mp">f</span><span class="kpi-num">${fRk(mSpend)}</span></div>
-        ${gAtivo
-          ? `<div class="kpi-row"><span class="plat gp">G</span><span class="kpi-num">${fRk(gSpend)}</span></div>`
-          : `<div class="na">Google N/A</div>`}
-      </div>
-
-      <div class="kpi-block">
-        <div class="kpi-lbl">Leads</div>
-        <div class="kpi-row"><span class="plat mp">f</span><span class="kpi-num">${mLeads>0?fN(mLeads):'—'}</span></div>
-        ${gAtivo
-          ? `<div class="kpi-row"><span class="plat gp">G</span><span class="kpi-num">${gLeads>0?fN(gLeads):'—'}</span></div>`
-          : `<div class="na"></div>`}
-      </div>
-
-      <div class="cpl-block">
-        <div class="kpi-lbl">CPL Meta</div>
-        <div class="cpl-row">
-          <span class="plat mp">f</span>
-          <span class="cpl-val ${cplCls(mCPL,mBom,mMedio)}">${fR(mCPL)}</span>
-        </div>
-      </div>
-
-      <div class="cpl-block">
-        <div class="kpi-lbl">CPL Google</div>
-        ${gAtivo
-          ? `<div class="cpl-row">
-               <span class="plat gp">G</span>
-               <span class="cpl-val ${cplCls(gCPL,gBom,gMedio)}">${fR(gCPL)}</span>
-             </div>`
-          : `<div class="na">—</div>`}
-      </div>
-
-      <div><a class="link-btn" href="${c.dash}" target="_blank">Ver →</a></div>`;
-
-    grid.appendChild(card);
+/* ── ativos ─────────────────────────────── */
+function renderAtivos(){
+  const at=DATA.clientes.filter(c=>c.grupo==='ativo');
+  const k='d'+PER;
+  let S=0,L=0,vei=0;
+  at.forEach(c=>{
+    const m=c.meta?.[k]; const g=c.google?.[k];
+    S+=(m?.spend||0)+(g?.spend||0); L+=(m?.leads||0)+(g?.leads||0);
+    if(status(c.meta)[0].cls==='good') vei++;
   });
+  const ref=at.find(c=>c.meta)?.meta?.ref;
+  $('#perLbl').textContent=perName(PER)+(ref?' · até '+fDY(ref):'');
+  $('#sum').innerHTML=`
+    <div class="sum-c"><div class="sum-l">Investimento</div><div class="sum-v mono">${fRk(S)}</div><div class="sum-s">${perName(PER)}, Meta + Google</div></div>
+    <div class="sum-c"><div class="sum-l">Conversões</div><div class="sum-v mono">${fN(L)}</div><div class="sum-s">leads e conversas iniciadas</div></div>
+    <div class="sum-c"><div class="sum-l">Custo por conversão</div><div class="sum-v mono">${L?fR(S/L):'—'}</div><div class="sum-s">média ponderada</div></div>
+    <div class="sum-c"><div class="sum-l">Veiculando</div><div class="sum-v mono">${vei} de ${at.length}</div><div class="sum-s">com gasto ontem ou anteontem</div></div>`;
 
-  // Totais
-  document.getElementById('sumSpend').textContent  = fRk(totSpend);
-  document.getElementById('sumLeads').textContent  = fN(totLeads);
-  const cpl = totLeads>0 ? totSpend/totLeads : null;
-  document.getElementById('sumCPL').textContent    = cpl ? fR(cpl) : '—';
-  document.getElementById('sumAtivos').textContent = ativos;
-
-  const lbls = {1:'Ontem',7:'Últimos 7 dias',14:'Últimos 14 dias',30:'Últimos 30 dias'};
-  document.getElementById('footerPeriod').textContent = lbls[period];
+  $('#cards').innerHTML=at.map((c,i)=>{
+    const m=c.meta?.[k]||{}; const g=c.google?.[k];
+    const gOn=g&&g.spend>0;
+    const chips=status(c.meta).map(s=>`<span class="chip ${s.cls}"><i></i>${s.t}</span>`).join('');
+    return `<article class="card">
+      <div class="card-top">${tile(c)}<div><div class="c-name">${c.nome}</div><div class="chips">${chips}</div></div></div>
+      <div class="kpis">
+        <div class="kpi"><div class="kpi-l">Investimento</div><div class="kpi-v mono">${fR(m.spend)}</div></div>
+        <div class="kpi"><div class="kpi-l">Conversões</div><div class="kpi-v mono">${fN(m.leads)}</div></div>
+        <div class="kpi"><div class="kpi-l">Custo / conv.</div><div class="kpi-v mono">${fR(m.cpl)}</div></div>
+      </div>
+      ${gOn?`<div class="g-row"><img src="https://mggastal.github.io/santo_mci/googleads.png" alt="">Google Ads: <b class="mono">${fR(g.spend)}</b> · ${fN(g.leads)} conv. · ${fR(g.cpl)}</div>`:''}
+      <div class="spark" data-i="${i}">
+        <div class="spark-l"><span>Investimento por dia · 30 dias</span><span class="mono">${fR(c.meta?.d30?.spend)}</span></div>
+        ${spark(c)}
+      </div>
+      <div class="card-ft"><span>Dash atualizado ${ago(c.commit)}</span><a class="open" href="${c.dash}" target="_blank" rel="noopener">Abrir dash →</a></div>
+    </article>`;
+  }).join('');
+  bindSparks(at);
 }
 
-// ═══ PERÍODO ════════════════════════════
-function setPeriod(n,btn){
-  period=n;
-  document.querySelectorAll('.pb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGrid();
+function spark(c){
+  const s=c.meta?.serie||[]; if(!s.length) return '<div class="empty" style="height:54px;font-size:12px;padding-top:18px">Sem dados</div>';
+  const W=300,H=54,gap=2,bw=(W-gap*(s.length-1))/s.length;
+  const max=Math.max(...s.map(x=>x.s),1);
+  const col=c.cor||'#4A6984';
+  let bars='',hits='';
+  s.forEach((x,j)=>{
+    const h=x.s>0?Math.max(2,(x.s/max)*(H-2)):0, X=j*(bw+gap);
+    if(h) bars+=`<rect x="${X.toFixed(2)}" y="${(H-h).toFixed(2)}" width="${bw.toFixed(2)}" height="${h.toFixed(2)}" rx="${Math.min(2,bw/2).toFixed(2)}" fill="${col}"/>`;
+    hits+=`<rect class="hit" data-j="${j}" x="${(X-gap/2).toFixed(2)}" y="0" width="${(bw+gap).toFixed(2)}" height="${H}"/>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="Investimento diário de ${c.nome} nos últimos 30 dias"><line x1="0" y1="${H-0.5}" x2="${W}" y2="${H-0.5}" stroke="var(--border)"/>${bars}${hits}</svg>`;
 }
-
-// ═══ TEMA ════════════════════════════════
-function toggleTheme(){
-  const dark = document.documentElement.getAttribute('data-theme')==='dark';
-  document.documentElement.setAttribute('data-theme', dark?'light':'dark');
-  document.getElementById('themeIcon').textContent  = dark?'🌙':'☀️';
-  document.getElementById('themeLabel').textContent = dark?'Escuro':'Claro';
-  localStorage.setItem('santo-theme', dark?'light':'dark');
-}
-(function(){
-  const saved = localStorage.getItem('santo-theme');
-  if(saved==='light'){
-    document.documentElement.setAttribute('data-theme','light');
-    document.addEventListener('DOMContentLoaded',()=>{
-      const ti=document.getElementById('themeIcon');
-      const tl=document.getElementById('themeLabel');
-      if(ti) ti.textContent='🌙';
-      if(tl) tl.textContent='Escuro';
+function bindSparks(at){
+  const tip=$('#tip');
+  document.querySelectorAll('.spark').forEach(el=>{
+    const c=at[+el.dataset.i];
+    el.querySelectorAll('rect.hit').forEach(r=>{
+      r.addEventListener('mousemove',e=>{
+        const x=c.meta.serie[+r.dataset.j];
+        tip.innerHTML=`<b>${fDY(x.d)}</b><br>Investimento: ${fR(x.s)}<br>Conversões: ${fN(x.c)}`;
+        tip.style.display='block';
+        const tw=tip.offsetWidth; tip.style.left=Math.min(e.clientX+12,innerWidth-tw-8)+'px'; tip.style.top=(e.clientY+14)+'px';
+      });
+      r.addEventListener('mouseleave',()=>tip.style.display='none');
     });
-  }
-})();
-
-// ═══ INIT ════════════════════════════════
-async function init(){
-  renderGrid(); // mostra esqueleto imediatamente
-  const results = await Promise.all(CLIENTES.map(fetchCliente));
-  results.forEach((r,i)=>{ clientData[i]=r; });
-  const now = new Date();
-  document.getElementById('lastSync').textContent =
-    'Sincronizado às '+now.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-  renderGrid();
+  });
 }
-init();
+
+/* ── tabelas ordenáveis ─────────────────── */
+function table(el,cols,rows,foot){
+  let sk=cols.find(c=>c.def)?.k||cols[0].k, dir=-1;
+  function draw(){
+    const r=[...rows].sort((a,b)=>{const A=a[sk],B=b[sk];if(A==null)return 1;if(B==null)return -1;return (typeof A==='string'?A.localeCompare(B,'pt-BR'):A-B)*dir;});
+    el.innerHTML=`<thead><tr>${cols.map(c=>`<th data-k="${c.k}" class="${c.num?'num':''} ${c.k===sk?'sorted':''}">${c.l}<span class="arr">${c.k===sk?(dir>0?'▲':'▼'):'↕'}</span></th>`).join('')}</tr></thead>
+      <tbody>${r.map(x=>`<tr>${cols.map(c=>`<td class="${c.num?'num mono':''}">${c.f?c.f(x):x[c.k]??'—'}</td>`).join('')}</tr>`).join('')}</tbody>
+      ${foot?`<tfoot><tr>${foot(rows)}</tr></tfoot>`:''}`;
+    el.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(k==='link')return;dir=k===sk?-dir:(cols.find(c=>c.k===k).num?-1:1);sk=k;draw();});
+  }
+  draw();
+}
+function rowsFor(grupo){
+  return DATA.clientes.filter(c=>c.grupo===grupo).map(c=>{
+    const m=c.meta||{}, t=m.total||{}, g=c.google?.total;
+    const spend=(t.spend||0)+(g?.spend||0), leads=(t.leads||0)+(g?.leads||0);
+    return {c, nome:c.nome, desde:m.desde, ate:m.ultimo_gasto, spend:m.total?spend:null, imp:t.imp??null,
+            leads:m.total?leads:null, cpl:leads?spend/leads:null, g:!!(g&&g.spend>0), commit:c.commit};
+  });
+}
+const who=x=>`<div class="who">${tile(x.c)}<span>${x.nome}</span></div>`;
+const link=x=>`<a class="lnk" href="${x.c.dash}" target="_blank" rel="noopener">Abrir →</a>`;
+
+function renderPol(){
+  const rows=rowsFor('politica');
+  table($('#tPol'),[
+    {k:'nome',l:'Candidato',f:who},
+    {k:'desde',l:'Período',f:x=>x.desde?fDY(x.desde)+' a '+fDY(x.ate):'—'},
+    {k:'spend',l:'Investimento',num:1,def:1,f:x=>fR(x.spend)},
+    {k:'imp',l:'Impressões',num:1,f:x=>fN(x.imp)},
+    {k:'cpm',l:'CPM',num:1,f:x=>x.imp?fR(x.spend/x.imp*1000):'—'},
+    {k:'link',l:'',f:link},
+  ].map(c=>c.k==='cpm'?c:c), rows.map(r=>({...r,cpm:r.imp?r.spend/r.imp*1000:null})),
+  rs=>{const S=rs.reduce((a,r)=>a+(r.spend||0),0),I=rs.reduce((a,r)=>a+(r.imp||0),0);
+    return `<td>Total · ${rs.length} campanhas</td><td></td><td class="num mono">${fR(S)}</td><td class="num mono">${fN(I)}</td><td class="num mono">${I?fR(S/I*1000):'—'}</td><td></td>`;});
+}
+function renderIna(){
+  const rows=rowsFor('inativo');
+  table($('#tIna'),[
+    {k:'nome',l:'Cliente',f:who},
+    {k:'ate',l:'Último gasto',f:x=>x.ate?fDY(x.ate):'<span class="empty">sem dados na planilha</span>'},
+    {k:'desde',l:'Início',f:x=>fDY(x.desde)},
+    {k:'spend',l:'Investido',num:1,def:1,f:x=>fR(x.spend)+(x.g?'<span class="note">Meta + Google</span>':'')},
+    {k:'leads',l:'Conversões',num:1,f:x=>fN(x.leads)},
+    {k:'cpl',l:'Custo / conv.',num:1,f:x=>fR(x.cpl)},
+    {k:'link',l:'',f:link},
+  ], rows);
+}
+
+function render(){renderAtivos();renderPol();renderIna();}
+
+document.querySelectorAll('#per button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#per button').forEach(x=>x.classList.remove('on'));b.classList.add('on');PER=+b.dataset.p;renderAtivos();
+  try{localStorage.setItem('santo_per',PER)}catch(e){}
+});
+$('#themeBtn').onclick=()=>{
+  const cur=document.documentElement.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+  const nx=cur==='dark'?'light':'dark'; document.documentElement.dataset.theme=nx;
+  try{localStorage.setItem('santo_theme',nx)}catch(e){}
+};
+try{const t=localStorage.getItem('santo_theme'); if(t) document.documentElement.dataset.theme=t;
+    const p=+localStorage.getItem('santo_per'); if([1,7,14,30].includes(p)){PER=p;document.querySelectorAll('#per button').forEach(x=>x.classList.toggle('on',+x.dataset.p===p));}}catch(e){}
+
+fetch('status.json?t='+Date.now()).then(r=>r.json()).then(d=>{
+  DATA=d;
+  const g=new Date(d.gerado);
+  $('#sync').textContent='Atualizado '+ago(d.gerado);
+  $('#ftInfo').textContent='Coleta automática de hora em hora · última: '+g.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'});
+  render();
+}).catch(e=>{$('#sync').textContent='Erro ao carregar dados';console.error(e);});
 </script>
 </body>
 </html>
