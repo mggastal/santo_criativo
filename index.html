@@ -60,7 +60,7 @@ main{padding:24px 0 40px}
 .sec-hd span{font-size:12px;color:var(--muted)}
 
 /* summary */
-.sum{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .sum-c{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
 .sum-l{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .sum-v{font-size:24px;font-weight:700;margin-top:4px;white-space:nowrap}
@@ -120,7 +120,7 @@ tfoot td{font-weight:700;background:var(--surface2);border-bottom:0}
 footer{border-top:1px solid var(--border);padding:18px 0 28px;color:var(--muted);font-size:12px}
 .ft{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-@media (max-width:900px){.sum{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.sum{grid-template-columns:1fr}}
 @media (max-width:640px){
   .hide-sm{display:none}
   .wrap{padding:0 16px}
@@ -206,26 +206,24 @@ function status(m){
   // "planilha parada" de "cliente sem gasto", então o card diz só o fato
   const parado=m.ultimo_gasto?dayDiff(m.ref,m.ultimo_gasto):999;
   if(parado<=1) return [{cls:'good',t:'Veiculando'}];
-  return [{cls:parado<=7?'warn':'idle',t:'Último gasto na planilha: '+fD(m.ultimo_gasto)}];
+  return [{cls:parado<=7?'warn':'idle',t:'Último gasto: '+fD(m.ultimo_gasto)}];
 }
 
 /* ── ativos ─────────────────────────────── */
 function renderAtivos(){
   const at=DATA.clientes.filter(c=>c.grupo==='ativo');
   const k='d'+PER;
-  let S=0,L=0,vei=0;
+  let S=0,L=0;
   at.forEach(c=>{
     const m=c.meta?.[k]; const g=c.google?.[k];
     S+=(m?.spend||0)+(g?.spend||0); L+=(m?.leads||0)+(g?.leads||0);
-    if(status(c.meta)[0].cls==='good') vei++;
   });
   const ref=at.find(c=>c.meta)?.meta?.ref;
   $('#perLbl').textContent=perName(PER)+(ref?' · até '+fDY(ref):'');
   $('#sum').innerHTML=`
     <div class="sum-c"><div class="sum-l">Investimento</div><div class="sum-v mono">${fRk(S)}</div><div class="sum-s">${perName(PER)}, Meta + Google</div></div>
     <div class="sum-c"><div class="sum-l">Conversões</div><div class="sum-v mono">${fN(L)}</div><div class="sum-s">leads e conversas iniciadas</div></div>
-    <div class="sum-c"><div class="sum-l">Custo por conversão</div><div class="sum-v mono">${L?fR(S/L):'—'}</div><div class="sum-s">média ponderada</div></div>
-    <div class="sum-c"><div class="sum-l">Veiculando</div><div class="sum-v mono">${vei} de ${at.length}</div><div class="sum-s">com gasto ontem ou anteontem</div></div>`;
+    <div class="sum-c"><div class="sum-l">Custo por conversão</div><div class="sum-v mono">${L?fR(S/L):'—'}</div><div class="sum-s">média ponderada</div></div>`;
 
   $('#cards').innerHTML=at.map((c,i)=>{
     const m=c.meta?.[k]||{}; const g=c.google?.[k];
