@@ -38,8 +38,16 @@
    "nome": "GC2 Materiais Elétricos",
    "grupo": "ativo",
    "sheet": "1faWlRpa7osVOCKmuvQrD_gg8aSx4aloklqcmjKjgiac",
-   "logo": "",
-   "cor": "#4A6984"
+   "logo": "logos/santo_gc2.png",
+   "cor": "#04979E"
+  },
+  {
+   "repo": "santo_bemmequer",
+   "nome": "Laboratório Bem Me Quer",
+   "grupo": "ativo",
+   "sheet": "1rNDwriAHBml5Qv7tK99nRzZrKB3N1VF9r8zZGt7eRag",
+   "logo": "logos/santo_bemmequer.png",
+   "cor": "#00bfd9"
   },
   {
    "repo": "santo_danielmussi",
@@ -96,14 +104,6 @@
    "sheet": "1C9u-dG2EWQkPA3yHatw7uBoMuSYrlgOsbUq8wLHa7ck",
    "logo": "",
    "cor": "#ea580c"
-  },
-  {
-   "repo": "santo_bemmequer",
-   "nome": "Laboratório Bem Me Quer",
-   "grupo": "inativo",
-   "sheet": "1rNDwriAHBml5Qv7tK99nRzZrKB3N1VF9r8zZGt7eRag",
-   "logo": "",
-   "cor": "#0d9488"
   },
   {
    "repo": "santo_hliberty",
