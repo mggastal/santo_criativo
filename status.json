@@ -1,5 +1,5 @@
 {
- "gerado": "2026-11-24T14:18:01+00:00",
+ "gerado": "2026-11-24T14:19:25+00:00",
  "clientes": [
   {
    "repo": "santo_mci",
@@ -8,7 +8,7 @@
    "logo": "logos/santo_mci.png",
    "cor": "#EEAD2D",
    "dash": "https://mggastal.github.io/santo_mci/",
-   "commit": "2026-11-24T14:06:27Z",
+   "commit": "2026-11-24T14:18:04Z",
    "meta": {
     "desde": "2025-12-29",
     "ate": "2026-11-23",
@@ -203,7 +203,7 @@
    "logo": "logos/santo_polvo.png",
    "cor": "#7c3aed",
    "dash": "https://mggastal.github.io/santo_polvo/",
-   "commit": "2026-11-24T14:06:29Z",
+   "commit": "2026-11-24T14:18:06Z",
    "meta": {
     "desde": "2025-12-29",
     "ate": "2026-11-23",
@@ -398,7 +398,7 @@
    "logo": "logos/santo_lunar.png",
    "cor": "#EA8425",
    "dash": "https://mggastal.github.io/santo_lunar/",
-   "commit": "2026-11-24T14:06:31Z",
+   "commit": "2026-11-24T14:18:09Z",
    "meta": {
     "desde": "2026-03-19",
     "ate": "2026-11-20",
@@ -593,7 +593,7 @@
    "logo": "logos/santo_lume.png",
    "cor": "#014BA0",
    "dash": "https://mggastal.github.io/santo_lume/",
-   "commit": "2026-11-24T14:06:33Z",
+   "commit": "2026-11-24T14:18:11Z",
    "meta": {
     "desde": "2024-12-05",
     "ate": "2026-11-14",
@@ -815,7 +815,7 @@
    "logo": "",
    "cor": "#4A6984",
    "dash": "https://mggastal.github.io/santo_gc2/",
-   "commit": "2026-09-18T20:12:36Z",
+   "commit": "2026-11-24T14:18:38Z",
    "meta": {
     "desde": "2026-08-20",
     "ate": "2026-08-24",
