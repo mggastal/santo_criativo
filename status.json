@@ -1,5 +1,5 @@
 {
- "gerado": "2026-11-25T05:41:52+00:00",
+ "gerado": "2026-11-25T16:08:33+00:00",
  "clientes": [
   {
    "repo": "santo_mci",
@@ -8,35 +8,35 @@
    "logo": "logos/santo_mci.png",
    "cor": "#EEAD2D",
    "dash": "https://mggastal.github.io/santo_mci/",
-   "commit": "2026-11-24T23:31:47Z",
+   "commit": "2026-11-25T08:51:35Z",
    "meta": {
     "desde": "2025-12-30",
     "ate": "2026-11-24",
     "ultimo_gasto": "2026-11-24",
     "total": {
-     "spend": 10169.16,
+     "spend": 10169.21,
      "leads": 1306,
      "cpl": 7.79,
-     "imp": 1066760
+     "imp": 1066767
     },
     "ref": "2026-11-24",
     "d1": {
-     "spend": 23.61,
+     "spend": 23.66,
      "leads": 6,
      "cpl": 3.94
     },
     "d7": {
-     "spend": 165.46,
+     "spend": 165.51,
      "leads": 43,
      "cpl": 3.85
     },
     "d14": {
-     "spend": 250.73,
+     "spend": 250.78,
      "leads": 64,
      "cpl": 3.92
     },
     "d30": {
-     "spend": 424.33,
+     "spend": 424.38,
      "leads": 94,
      "cpl": 4.51
     },
@@ -188,7 +188,7 @@
      },
      {
       "d": "2026-11-24",
-      "s": 23.61,
+      "s": 23.66,
       "c": 6
      }
     ],
@@ -203,35 +203,35 @@
    "logo": "logos/santo_polvo.png",
    "cor": "#7c3aed",
    "dash": "https://mggastal.github.io/santo_polvo/",
-   "commit": "2026-11-24T23:33:44Z",
+   "commit": "2026-11-25T08:54:18Z",
    "meta": {
     "desde": "2025-12-30",
     "ate": "2026-11-24",
     "ultimo_gasto": "2026-11-24",
     "total": {
-     "spend": 14859.29,
+     "spend": 14859.42,
      "leads": 916,
      "cpl": 16.22,
-     "imp": 1067089
+     "imp": 1067097
     },
     "ref": "2026-11-24",
     "d1": {
-     "spend": 46.21,
+     "spend": 46.34,
      "leads": 3,
-     "cpl": 15.4
+     "cpl": 15.45
     },
     "d7": {
-     "spend": 281.31,
+     "spend": 281.44,
      "leads": 13,
-     "cpl": 21.64
+     "cpl": 21.65
     },
     "d14": {
-     "spend": 564.0,
+     "spend": 564.13,
      "leads": 36,
      "cpl": 15.67
     },
     "d30": {
-     "spend": 1247.32,
+     "spend": 1247.45,
      "leads": 84,
      "cpl": 14.85
     },
@@ -383,7 +383,7 @@
      },
      {
       "d": "2026-11-24",
-      "s": 46.21,
+      "s": 46.34,
       "c": 3
      }
     ],
@@ -398,37 +398,37 @@
    "logo": "logos/santo_lunar.png",
    "cor": "#EA8425",
    "dash": "https://mggastal.github.io/santo_lunar/",
-   "commit": "2026-11-24T23:32:43Z",
+   "commit": "2026-11-25T08:51:50Z",
    "meta": {
     "desde": "2026-03-19",
     "ate": "2026-11-24",
     "ultimo_gasto": "2026-11-24",
     "total": {
-     "spend": 2739.42,
+     "spend": 2739.56,
      "leads": 658,
      "cpl": 4.16,
-     "imp": 347771
+     "imp": 347801
     },
     "ref": "2026-11-24",
     "d1": {
-     "spend": 5.56,
+     "spend": 5.7,
      "leads": 0,
      "cpl": null
     },
     "d7": {
-     "spend": 76.83,
+     "spend": 76.97,
      "leads": 11,
-     "cpl": 6.98
+     "cpl": 7.0
     },
     "d14": {
-     "spend": 203.11,
+     "spend": 203.25,
      "leads": 36,
-     "cpl": 5.64
+     "cpl": 5.65
     },
     "d30": {
-     "spend": 253.0,
+     "spend": 253.14,
      "leads": 75,
-     "cpl": 3.37
+     "cpl": 3.38
     },
     "serie": [
      {
@@ -578,7 +578,7 @@
      },
      {
       "d": "2026-11-24",
-      "s": 5.56,
+      "s": 5.7,
       "c": 0
      }
     ],
@@ -593,7 +593,7 @@
    "logo": "logos/santo_lume.png",
    "cor": "#014BA0",
    "dash": "https://mggastal.github.io/santo_lume/",
-   "commit": "2026-11-24T23:34:00Z",
+   "commit": "2026-11-25T08:54:47Z",
    "meta": {
     "desde": "2024-12-05",
     "ate": "2026-11-14",
@@ -815,7 +815,7 @@
    "logo": "logos/santo_gc2.png",
    "cor": "#04979E",
    "dash": "https://mggastal.github.io/santo_gc2/",
-   "commit": "2026-11-24T14:26:12Z",
+   "commit": "2026-11-25T08:52:21Z",
    "meta": {
     "desde": "2026-08-20",
     "ate": "2026-08-24",
@@ -1010,7 +1010,7 @@
    "logo": "logos/santo_bemmequer.png",
    "cor": "#00bfd9",
    "dash": "https://mggastal.github.io/santo_bemmequer/",
-   "commit": "2026-11-24T23:57:21Z",
+   "commit": "2026-11-25T08:51:56Z",
    "meta": {
     "desde": "2026-01-28",
     "ate": "2026-07-31",
@@ -1232,7 +1232,7 @@
    "logo": "",
    "cor": "#2563eb",
    "dash": "https://mggastal.github.io/santo_danielmussi/",
-   "commit": "2026-11-24T22:08:43Z",
+   "commit": "2026-11-25T07:47:24Z",
    "meta": {
     "desde": "2026-07-07",
     "ate": "2026-10-01",
@@ -1622,7 +1622,7 @@
    "logo": "",
    "cor": "#db2777",
    "dash": "https://mggastal.github.io/santo_josi/",
-   "commit": "2026-11-24T22:06:40Z",
+   "commit": "2026-11-25T07:43:32Z",
    "meta": {
     "desde": "2026-03-05",
     "ate": "2026-08-05",
@@ -1817,7 +1817,7 @@
    "logo": "",
    "cor": "#be185d",
    "dash": "https://mggastal.github.io/santo_josicunha/",
-   "commit": "2026-11-24T22:06:20Z",
+   "commit": "2026-11-25T07:42:50Z",
    "meta": {
     "desde": "2026-03-05",
     "ate": "2026-10-01",
@@ -2207,7 +2207,7 @@
    "logo": "",
    "cor": "#16a34a",
    "dash": "https://mggastal.github.io/santo_pedropereira/",
-   "commit": "2026-11-24T09:05:59Z",
+   "commit": "2026-11-25T07:42:43Z",
    "meta": {
     "desde": "2026-09-17",
     "ate": "2026-10-01",
