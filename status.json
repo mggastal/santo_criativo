@@ -1,5 +1,5 @@
 {
- "gerado": "2026-11-28T12:20:38+00:00",
+ "gerado": "2026-11-28T20:33:56+00:00",
  "clientes": [
   {
    "repo": "santo_mci",
@@ -2402,7 +2402,7 @@
    "logo": "",
    "cor": "#ea580c",
    "dash": "https://mggastal.github.io/santo_girao/",
-   "commit": "2026-11-27T18:35:41Z",
+   "commit": "2026-11-28T17:16:06Z",
    "meta": {
     "desde": "2025-09-16",
     "ate": "2026-08-10",
