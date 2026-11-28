@@ -1,5 +1,5 @@
 {
- "gerado": "2026-11-27T20:18:53+00:00",
+ "gerado": "2026-11-28T02:57:42+00:00",
  "clientes": [
   {
    "repo": "santo_mci",
@@ -593,7 +593,7 @@
    "logo": "logos/santo_lume.png",
    "cor": "#014BA0",
    "dash": "https://mggastal.github.io/santo_lume/",
-   "commit": "2026-11-27T05:12:31Z",
+   "commit": "2026-11-28T00:08:29Z",
    "meta": {
     "desde": "2024-12-07",
     "ate": "2026-11-14",
@@ -1427,7 +1427,7 @@
    "logo": "",
    "cor": "#0891b2",
    "dash": "https://mggastal.github.io/santo_danilorodrigues/",
-   "commit": "2026-11-27T01:31:32Z",
+   "commit": "2026-11-28T01:09:59Z",
    "meta": {
     "desde": "2026-08-13",
     "ate": "2026-09-30",
@@ -2012,7 +2012,7 @@
    "logo": "logos/santo_miriam.png",
    "cor": "#dc2626",
    "dash": "https://mggastal.github.io/santo_miriam/",
-   "commit": "2026-11-27T15:45:05Z",
+   "commit": "2026-11-28T00:47:54Z",
    "meta": {
     "desde": "2026-09-03",
     "ate": "2026-10-01",
@@ -2597,7 +2597,7 @@
    "logo": "",
    "cor": "#4f46e5",
    "dash": "https://mggastal.github.io/santo_hliberty/",
-   "commit": "2026-11-27T01:19:06Z",
+   "commit": "2026-11-28T00:52:10Z",
    "meta": null,
    "google": null
   }
